@@ -1,1 +1,1 @@
-pytest -v --alluredir="AllureReports" --browser firefox -m sanity
+pytest -v --alluredir="AllureReports" --browser firefox -m sanity -p no:warnings

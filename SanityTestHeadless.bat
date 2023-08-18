@@ -1,1 +1,1 @@
-pytest -v --alluredir="AllureReports" -m sanity
+pytest -v --alluredir="AllureReports" -m sanity -p no:warnings

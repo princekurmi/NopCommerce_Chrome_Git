@@ -8,7 +8,6 @@ from Utilities.ReadProperties import ReadConfig
 
 
 class Test_Login:
-
     url = ReadConfig.get_url()
     email = ReadConfig.get_email()
     pwd = ReadConfig.get_password()
@@ -21,15 +20,15 @@ class Test_Login:
         self.log.info("Starting test_login_001")
         self.log.info("Launching Browser")
         self.driver.get(self.url)
-        self.log.info("Going to this URL-->"+self.url)
+        self.log.info("Going to this URL-->" + self.url)
         self.lp = LoginPage(self.driver)
         self.lp.enter_email(self.email)
-        self.log.info("Entering Email-->"+self.email)
+        self.log.info("Entering Email-->" + self.email)
         self.lp.enter_password(self.pwd)
-        self.log.info("Entering Password-->"+self.pwd)
+        self.log.info("Entering Password-->" + self.pwd)
         self.lp.click_login_button()
         self.log.info("Clicking on Login Button")
-        if self.driver.title == "Dashboard / nopCommerce administration":    #self.lp.login_status():
+        if self.driver.title == "Dashboard / nopCommerce administration":  # self.lp.login_status():
             self.log.info("Page Title Matched--test_login_001 is Passed")
             self.driver.save_screenshot(f"{self.path}test_login_001--Passed.png")
             self.log.info("Saving test_login_001--Passed Screenshot")
@@ -42,7 +41,6 @@ class Test_Login:
             self.driver.save_screenshot(f"{self.path}test_login_001--Failed.png")
             self.log.info("Saving test_login_001--Failed Screenshot")
             assert False
-
 
     # def test_login_002(self, setup):
     #     self.driver = setup

@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 class LoginPage:
     xpath_email = (By.XPATH, '//*[@id="Email"]')
     xpath_password = (By.XPATH, '//*[@id="Password"]')
-    xpath_login_button = (By.XPATH, '/html/body/div[6]/div/div/div/div/div[2]/div[1]/div/form/div[3]/button')
+    xpath_login_button = (By.XPATH, "//button[@type='submit']")
     xpath_logout_button = (By.XPATH, '//*[@id="navbarText"]/ul/li[3]/a')
     # xpath_login_status = (By.XPATH, '//*[@id="navbarText"]/ul/li[2]')
 

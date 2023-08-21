@@ -20,11 +20,22 @@ def setup(browser):
     elif browser == "edge":
         driver = webdriver.Edge()
     else:
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("headless")
-        driver = webdriver.Chrome(options=chrome_options)
+        # chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument("headless")
+        # driver = webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome()
     driver.maximize_window()
     driver.implicitly_wait(10)
     yield driver
     driver.close()
     return driver
+
+
+@pytest.fixture(params=[
+    ("admin@yourstore.com", "admin", "Pass"),
+    ("admin1@yourstore.com", "admin", "Fail"),
+    ("admin@yourstore.com", "admin1", "Fail"),
+    ("admin1@yourstore.com", "admin1", "Fail")
+])
+def getDataForLogin(request):
+    return request.param

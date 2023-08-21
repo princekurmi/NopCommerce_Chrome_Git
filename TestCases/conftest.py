@@ -20,10 +20,9 @@ def setup(browser):
     elif browser == "edge":
         driver = webdriver.Edge()
     else:
-        # chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument("headless")
-        # driver = webdriver.Chrome(options=chrome_options)
-        driver = webdriver.Chrome()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("headless")
+        driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()
     driver.implicitly_wait(10)
     yield driver
